@@ -256,6 +256,7 @@ const ChatPage: React.FC = () => {
           });
         } else {
           console.log(response);
+          console.log("response");
         }
       }
     });
@@ -414,7 +415,13 @@ const ChatPage: React.FC = () => {
 
           {/* CHAT */}
           {homeAppear && <HomeComponent />}
-          {chatAppear && <Chat userId={currentUser.uid} friendId={friendId} friendMessages={messages} />}
+          {chatAppear && (
+            <Chat
+              userId={currentUser.uid}
+              friendId={friendId}
+              friendMessages={messages}
+            />
+          )}
           {searchAppear && <Search usersSearch={usersSearch} />}
           {notificationAppear && (
             <Notification
